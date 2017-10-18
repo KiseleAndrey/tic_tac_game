@@ -1,0 +1,4 @@
+<div (click)="!cell.type && changeState()" class='cell' [ngClass]="{'cell-border_buttom':cell.id < 7, 'cell-border_right':cell.id %3 !== 0 }">
+  <i *ngIf="cell.type ==='cross'" class="fa fa-times" aria-hidden="true"></i>
+  <i *ngIf="cell.type === 'zero'" class="fa fa-circle-thin" aria-hidden="true"></i>
+</div>

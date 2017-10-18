@@ -1,0 +1,14 @@
+<div [@show-popup]='show' class="grid-popup">
+  <div class="popup-text_content">
+    <div *ngIf="type">
+      ВЫИГРАЛ:
+      <i *ngIf="type ==='cross'" class="fa fa-times" aria-hidden="true"></i>
+      <i *ngIf="type === 'zero'" class="fa fa-circle-thin" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="!type">НИЧЬЯ</div>
+  </div>
+  <div class="popup-button">
+    <button (click)="closeDialog()">OK</button>
+  </div>
+</div>
+<div (click)="closeDialog()"F [ngClass]="{'content-overlay': show}"></div>

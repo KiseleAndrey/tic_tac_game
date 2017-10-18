@@ -1,0 +1,20 @@
+ 
+ button {
+    background:#5ca4d4;
+    padding: 10px;
+    border-radius:2px;
+    min-width: 90px;
+    cursor: pointer;
+    font-family:Roboto-Medium;
+    font-size:13px;
+    color:#ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    border:none; 
+    &:hover{
+        background:#229bd2; 
+    }
+}

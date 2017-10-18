@@ -1,0 +1,14 @@
+<div class="grid-content">
+  <div style="margin-bottom: 25px;">
+    Выберети тип:
+    <i class="fa fa-times" aria-hidden="true"></i>
+    <input [checked]="type ==='cross'" [disabled]="getStateGame" type="radio" name="type" (click)="changeType('cross')">
+    <i class="fa fa-circle-thin" aria-hidden="true"></i>
+    <input [checked]="type ==='zero'" [disabled]="getStateGame" type="radio" name="type" (click)="changeType('zero')">
+  </div>
+  <div class="grid">
+    <div class="grid-background"></div>
+    <app-popup></app-popup>
+    <app-cell *ngFor="let cell of cells" [cell]=cell></app-cell>
+  </div>
+</div>
