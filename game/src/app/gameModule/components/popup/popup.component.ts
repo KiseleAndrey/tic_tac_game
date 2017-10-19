@@ -29,13 +29,13 @@ import { GameService } from '../../services/game.service';
   ]
 })
 export class PopupComponent implements OnInit {
-  show: boolean = false;
+  show = false;
   gameEndSubscription: Subscription;
   constructor(private gameServece: GameService) {
 
   }
   ngOnInit(): void {
-    this.show = this.gameServece.stateGame.isHaveWon;
+    this.show = this.gameServece.stateGame.isHaveEndGame;
 
     this.gameEndSubscription = this.gameServece.onEndGame.subscribe(x => {
       this.show = x;
@@ -43,12 +43,12 @@ export class PopupComponent implements OnInit {
   }
 
   get type(): string {
-    return this.gameServece.stateGame.type;
+    return this.gameServece.stateGame.currentType;
   }
 
   closeDialog() {
     this.show = !this.show;
-    this.gameServece.clickAfterGame();
+    this.gameServece.closedDialog();
   }
 
 }

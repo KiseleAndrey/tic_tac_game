@@ -2,11 +2,11 @@ import { Cell } from './cell';
 
 export class StateGame {
     constructor() {
-        this.isHaveWon = false;
+        this.isHaveEndGame = false;
     }
     cells: Cell[] = [];
-    type: string;
-    isHaveWon: boolean;
+    currentType: string;
+    isHaveEndGame: boolean;
     isStartGame: boolean;
     selectedType: string;
 }

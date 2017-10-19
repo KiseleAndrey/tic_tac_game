@@ -7,13 +7,14 @@ import { Cell } from '../../models/cell';
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss']
 })
-export class CellComponent  {
+export class CellComponent {
   @Input()
   cell: Cell;
-  constructor(private gameservice: GameService) {}
+  constructor(private gameservice: GameService) { }
 
   changeState() {
-    this.gameservice.changeCell(this.cell.id);
+    if (!this.cell.type) {
+      this.gameservice.changeCell(this.cell.id);
+    }
   }
-
 }
